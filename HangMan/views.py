@@ -32,9 +32,9 @@ def newGame(request):
         alph = list(string.ascii_lowercase)
         request.session['alph'] = alph
         # store answer from random word api
-        # answer = requests.get("https://random-word-api.herokuapp.com/word").text
-        # answer = answer[2:len(answer) - 2]
-        answer = 'test'
+        answer = requests.get("https://random-word-api.herokuapp.com/word").text
+        answer = answer[2:len(answer) - 2]
+        # answer = 'test'
         # logger.info(answer[2:len(answer) - 2])
         request.session['answer'] = answer
         # store record of guessed answers
