@@ -1,2 +1,3 @@
-django
+django~=4.2.6
 djangorestframework
+requests~=2.31.0

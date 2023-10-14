@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <link rel="stylesheet" href="{% static 'HangMan/testcss.css' %}">
+    <style>
+        body {
+            text-align: left;
+            color: blue;
+        }
+        h1 {
+            color: light-blue;
+        }
+    </style>
+    <div>
+        <form action="" id="home" method="get">
+            <button type="submit" name="home"> Home </button>
+        </form>
+    </div>
+    <h1> You win this round! </h1>
+    <h2> The answer was {{ request.session.answer }}</h2>
+    <h2> You have won {{ request.session.wins }} times</h2>
+    <form action="" id="continueWin" method="get">
+        <button type="submit" name="continue"> Continue? </button>
+    </form>
+</html>

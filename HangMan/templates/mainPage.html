@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <link rel="stylesheet" href="{% static 'HangMan/testcss.css' %}">
+    <style>
+        body {
+            text-align: left;
+            color: blue;
+        }
+        h1 {
+            color: light-blue;
+        }
+    </style>
+    <div style="text-align: left; display: inline-flex;">
+        <div>
+            <form action="" id="home" method="get">
+                <button type="submit" name="home"> Home </button>
+            </form>
+        </div>
+        <div>
+            <h1> HangMan </h1>
+        </div>
+    </div>
+    <div>
+        <a> Incorrect Guesses = {{ request.session.guessNum }} </a>
+    </div>
+    <div>
+        <a> Correct Guesses = {{ request.session.correct }} </a>
+    </div>
+    <div>
+        <a> Game Status = {{ request.session.status }} </a>
+    </div>
+    <div style="display: inline-flex">
+        {% for x in request.session.answer %}
+            {% if x in request.session.guessed %}
+                <h1> {{x}} </h1>
+            {% else %}
+                <h1>&nbsp__&nbsp</h1>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div>
+        <form action="" id="letters" method="post">
+            {% for x in request.session.alph %}
+                {% if x not in request.session.guessed %}
+                    <button class="btn btn-default" type="submit" name="letter" value={{x}} >{{x}}</button>
+                {% else %}
+                    <button class="btn btn-default" type="submit" name="letter" value={{x}} disabled>{{x}}</button>
+                {% endif %}
+            {% endfor %}
+            {% csrf_token %}
+        </form>
+    </div>
+</html>
