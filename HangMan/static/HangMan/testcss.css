@@ -1,4 +1,129 @@
-body {
-  background-color: lightblue;
-  font-family: verdana;
+/* testcss.css */
+
+/* Layout */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
 }
+
+.game-section {
+  margin: 20px 0; 
+}
+
+/* Typography */
+.puzzle-letter {
+  gap: 10px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 5px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 3px solod #000;
+  margin-top: 1px;
+}
+
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  
+}
+
+
+/* Colors */
+body {
+  background-color: #272828; 
+  color: #F5F5F5;
+}
+
+button {
+  background-color: #662e18; /* Wood brown color */
+
+  border: none;
+ 
+
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5); /* Subtle shadow */
+
+  padding: 10px 24px;
+  margin: 6px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  transition: box-shadow 0.2s;
+}
+
+button:hover {
+  box-shadow: 0 4px 4px rgba(66, 6, 135, 0.8); /* More shadow on hover */
+  background: #6721f3;
+  transform: scale(1.1);
+}
+
+/* Graphics */
+.hangman-drawing {
+  width: 200px;
+}
+
+/* Animations */ 
+.wrong-letter-flash {
+  animation: flash 1.5s infinite;
+}
+
+.letter-button {
+  padding: 20px;
+  border-radius: 10px;
+  background: #0096FF;
+  color: white;
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+.letter-button:disabled {
+  /* box-shadow:  */
+    /* 0 5px 0 0 #694313,  */
+    /* 0 2px 4px rgba(0,0,0,0.3);   */
+}
+
+@keyframes flash {
+  0% {color: red;}
+  50% {color: #F5F5F5;}
+  100% {color: red;}
+}
+
+.hangman-image {
+  margin-right: 20px; 
+  
+}
+
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  padding: 6px;
+}
+
+.game-name {
+  background-color: #272828; 
+  color: #fff;
+  padding: 10px;
+  border: 2px solid  #0096FF;
+  box-shadow: 0 4px 2px -2px #333;
+  transition: transform 0.3s; 
+  position: relative;
+  top: -15px;
+}
+
+.game-name:hover {
+  transform: scale(1.1);
+}
+
